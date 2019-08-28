@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="org.andika.CinemaMovie.DetailActivity"
+    tools:showIn="@layout/activity_detail">
+
+    <LinearLayout
+        android:id="@+id/pembungkus_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/loadbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp" />
+
+        <TextView
+            android:id="@+id/title_heading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/movie_title"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Title"/>
+
+        <TextView
+            android:id="@+id/title_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text=""
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/overview_heading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/overview_title"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Overview"/>
+        <TextView
+            android:id="@+id/overview_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"
+            android:text=""/>
+        <TextView
+            android:id="@+id/runtime_heading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/time_title"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Runtime"/>
+        <TextView
+            android:id="@+id/runtime_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"
+            android:text=""/>
+        <TextView
+            android:id="@+id/vote_heading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/vote_title"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Movie Vote"/>
+        <TextView
+            android:id="@+id/vote_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"
+            android:text=""/>
+        <TextView
+            android:id="@+id/status_heading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/movie_status"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Movie Status"/>
+        <TextView
+            android:id="@+id/status_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"
+            android:text=""/>
+        <TextView
+            android:id="@+id/release_heading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/available"
+            android:drawablePadding="8dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Released at"/>
+        <TextView
+            android:id="@+id/release_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"
+            android:text=""/>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

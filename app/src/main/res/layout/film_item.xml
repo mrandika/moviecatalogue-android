@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/img_poster"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:background="#fff"/>
+        <TextView
+            android:id="@+id/txt_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Judul Film"
+            android:layout_marginLeft="8dp"
+            android:textSize="20sp"
+            android:layout_toEndOf="@id/img_poster"/>
+        <TextView
+            android:id="@+id/txt_deskripsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txt_judul"
+            android:layout_below="@+id/txt_judul"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Ini contoh deskripsi suatu film, tampilkan disini"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/txt_release"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txt_deskripsi"
+            android:layout_below="@+id/txt_deskripsi"
+            android:layout_marginTop="5dp"
+            android:text="Tanggal Rilis"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_release"
+            android:layout_alignStart="@+id/txt_release"
+            android:gravity="bottom"
+            android:layout_alignBottom="@+id/img_poster"
+            android:text="More Info..."/>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    tools:context="org.andika.CinemaMovie.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edit_cari"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="5dp"
+            android:layout_alignParentStart="true"
+            android:inputType="text"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:hint="Cari Film..." />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:visibility="gone"
+        android:textSize="45sp"
+        android:text="Loading..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sv_movie_home"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/nowplaying_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_margin="10dp">
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_nowplaying"
+                        android:layout_width="120dp"
+                        android:layout_height="160dp"
+                        android:background="#fff"
+                        android:src="@drawable/nowplaying"/>
+                    <TextView
+                        android:id="@+id/txt_nowplaying"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Now Playing"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="20sp"
+                        android:layout_toEndOf="@id/img_nowplaying"/>
+                    <TextView
+                        android:id="@+id/txt_nowplaying_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/txt_nowplaying"
+                        android:layout_below="@+id/txt_nowplaying"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:text="What movie is playing on theatre right now."
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/datasource_nowplaying"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/txt_nowplaying_desc"
+                        android:layout_below="@+id/txt_nowplaying_desc"
+                        android:layout_marginTop="5dp"
+                        android:text="Data by TheMovieDB"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/mostpopular_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_mostpopular"
+                        android:layout_width="120dp"
+                        android:layout_height="160dp"
+                        android:background="#fff"
+                        android:src="@drawable/mostpopular"/>
+                    <TextView
+                        android:id="@+id/txt_mostpopular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Most Popular"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="20sp"
+                        android:layout_toEndOf="@id/img_mostpopular"/>
+                    <TextView
+                        android:id="@+id/txt_mostpopular_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/txt_mostpopular"
+                        android:layout_below="@+id/txt_mostpopular"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:text="Most popular movie of all time."
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/datasource_mostpopular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/txt_mostpopular_desc"
+                        android:layout_below="@+id/txt_mostpopular_desc"
+                        android:layout_marginTop="5dp"
+                        android:text="Data by TheMovieDB"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/comingsoon_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_margin="10dp">
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_comingsoon"
+                        android:layout_width="120dp"
+                        android:layout_height="160dp"
+                        android:background="#fff"
+                        android:src="@drawable/comingsoon"/>
+                    <TextView
+                        android:id="@+id/txt_comingsoon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Coming Soon"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="20sp"
+                        android:layout_toEndOf="@id/img_comingsoon"/>
+                    <TextView
+                        android:id="@+id/txt_comingsoon_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/txt_comingsoon"
+                        android:layout_below="@+id/txt_comingsoon"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:text="What movies coming to theatre soon..."
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/datasource_comingsoon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/txt_comingsoon_desc"
+                        android:layout_below="@+id/txt_comingsoon_desc"
+                        android:layout_marginTop="5dp"
+                        android:text="Data by TheMovieDB"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_film"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
